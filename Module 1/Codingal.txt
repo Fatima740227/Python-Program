@@ -1,2 +1,0 @@
-File in write mode.....Hi! I am fatima.I am 12 years old
- File in append mode............Hi! I am penguin. I am 1 yr oldHi! I am penguin and I an 1 yr old.Hi! I am penguin and I an 1 yr old.
