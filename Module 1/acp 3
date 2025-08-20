@@ -1,0 +1,12 @@
+with open("Sample_File (2).txt", "r") as file:
+    print(file.read())
+
+with open("Sample_File (2).txt", "w") as file:
+    file.write("Hello, my name is Fatima Munib (nickname Mano).\n")
+    file.write("I study in Grade 6 at Roots Millennium Schools.\n")
+    file.write("I enjoy coding, cooking, and drawing.\n")
+
+with open("Sample_File (2).txt", "a") as file:
+    file.write("\nMy favorite subjects are English, Math, and History.\n")
+
+print("File operations completed successfully!")
