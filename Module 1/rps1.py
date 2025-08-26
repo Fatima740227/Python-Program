@@ -3,7 +3,7 @@ import random
 import sys
 pygame.init()
 WIDTH, HEIGHT = 600, 400
-screen = pygame.display.set_model((WIDTH, HEIGHT))
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Rock Paper Scissors")
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -11,7 +11,7 @@ BLUE = (50, 150, 255)
 GREEN = (0, 200, 100)
 RED = (255, 50, 50)
 font = pygame.font.SysFont(None, 36)
-background = pygame.Surface(WIDTH, HEIGHT)
+background = pygame.Surface((WIDTH, HEIGHT))
 background.fill((240, 240, 240))
 class Button:
     def __init__ (self, text, x, y, w, h, color, action):
@@ -54,5 +54,19 @@ while running:
      screen.blit(result_text, (WIDTH//2 - result_text.get_width()//2,120))
 for button in buttons:
      button.draw(screen)
+for event in pygame.event.get():
+     if event.type == pygame.QUIT:
+            running = False
+            sys.exit()
+     elif event.type == pygame.MOUSEBUTTONDOWN:
+            pos = pygame.mouse.get_pos()
+            for button in buttons:
+                 if button.is_clicked(pos):
+                        player_choice = button.action
+                        computer_choice = random.choice(choices)
+                        result = f"You : {player_choice} ! Computer: {computer_choice} - {get_winner(player_choice, computer_choice)}"
+pygame.display.flip()
+
+pygame.quit()
      
             
